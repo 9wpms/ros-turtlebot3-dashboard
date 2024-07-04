@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/wpms/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/wpms/catkin_ws/src/my_package/include/**",
+        "/home/wpms/catkin_ws/src/rosserial/rosserial_server/include/**",
+        "/home/wpms/catkin_ws/src/rosserial/rosserial_test/include/**",
+        "/home/wpms/catkin_ws/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/wpms/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

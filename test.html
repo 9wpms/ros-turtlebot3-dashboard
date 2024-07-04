@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtlebot3 Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .menu {
+            float: left;
+            width: 30%;
+            margin-top: 30px;
+        }
+        .main-content {
+            float: right;
+            width: 65%;
+            margin-top: 30px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <h2>Main Menu</h2>
+            <a href="/mode_map" class="btn">Create Map</a>
+            <a href="#" class="btn" id="naviBtn">Navigate Map</a>
+            <a href="/mode_exit" class="btn">Exit</a>
+        </div>
+        <div class="main-content">
+            <h2>Dashboard</h2>
+            <p>Welcome to the Turtlebot3 Dashboard.</p>
+            <!-- Additional content goes here -->
+        </div>
+    </div>
+
+    <!-- Modal for Navigate Map -->
+    <div id="naviModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+        <div style="background:#fff; margin:10% auto; padding:20px; width:50%; position:relative;">
+            <h2>Navigation Menu</h2>
+            <form action="/mode_navi" method="post">
+                <label for="map_name">Enter map name:</label>
+                <input type="text" id="map_name" name="map_name" required>
+                <button type="submit" style="display:block; width:100%; padding:10px; background:#333; color:#fff; text-align:center; margin-top:10px;">Submit</button>
+            </form>
+            <button id="closeModal" style="display:block; width:100%; padding:10px; background:#333; color:#fff; text-align:center; margin-top:10px;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('naviBtn').onclick = function() {
+            document.getElementById('naviModal').style.display = 'block';
+        }
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('naviModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
